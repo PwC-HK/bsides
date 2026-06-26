@@ -1,0 +1,28 @@
+# ─── Dependencies (installed, not source) ─────────────────────
+node_modules/
+**/node_modules/
+
+# ─── Build output ──────────────────────────────────────────────
+vulnerable-app/frontend/dist/
+
+# ─── Python bytecode (PoC) ─────────────────────────────────────
+__pycache__/
+*.pyc
+
+# ─── Runtime / generated artifacts ────────────────────────────
+# morgan access log + PoC/RCE proof files land in the bind-mounted logs dir
+vulnerable-app/backend/src/logs/*.log
+vulnerable-app/backend/src/logs/PWNED
+vulnerable-app/backend/src/logs/rce_proof.txt
+
+# ─── Internal build spec (keep out of the repo) ───────────────
+claude.md
+
+# ─── OS / editor cruft ────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
